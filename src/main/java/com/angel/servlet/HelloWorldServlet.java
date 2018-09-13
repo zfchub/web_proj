@@ -1,6 +1,7 @@
 package com.angel.servlet;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import java.io.PrintWriter;
  * user: zhoufangchao
  * date: 2018/9/13
  */
+@WebServlet(urlPatterns = "/helloWorld")
 public class HelloWorldServlet extends HttpServlet {
 
     private String message;

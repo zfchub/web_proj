@@ -4,14 +4,4 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>com.angel.servlet.HelloWorldServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
-        <url-pattern>/helloWorld</url-pattern>
-    </servlet-mapping>
-
 </web-app>
