@@ -153,9 +153,7 @@ public class TypeTransformUtils {
 	/**
 	 * 根据字段名称获取当前类及其父类中的变量
 	 * @param <T>
-	 * @param object
 	 * @param methodName
-	 * @param parameterTypes
 	 * @return
 	 */
 	public static <T> Class<?> getDeclaredField(Class<T> currClass, String methodName) {

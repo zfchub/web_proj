@@ -34,4 +34,22 @@
         <exception-type>java.lang.Throwable</exception-type >
         <location>/ErrorHandler</location>
     </error-page>
+
+    <description>初始化路径的配置和log4j配置</description>
+    <listener>
+        <listener-class>pers.husen.web.config.listener.WebInitConfigListener</listener-class>
+    </listener>
+    <description>监听session,实现在线人数统计</description>
+    <listener>
+        <listener-class>pers.husen.web.config.listener.OnlineCountListener</listener-class>
+    </listener>
+    <description>全局过滤器</description>
+    <filter>
+        <filter-name>WebFilter</filter-name>
+        <filter-class>pers.husen.web.config.filter.WebFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>WebFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

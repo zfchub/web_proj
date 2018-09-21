@@ -117,7 +117,6 @@ public class DbQueryUtils {
 	 * 
 	 * @param sql
 	 * @param paramList
-	 * @param classType
 	 * @return
 	 */
 	private static Object queryResultByParam(String sql, ArrayList<Object> paramList) {

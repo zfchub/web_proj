@@ -68,7 +68,7 @@ public class ProjectDeployConfig {
 			WEB_DEPLOY_PATH = new File("F:/workspace/workspace pers/web/WebContent/");
 		}*/
 		WEB_DEPLOY_PATH = new File(deployPath);
-		WEB_ROOT_PATH = WEB_DEPLOY_PATH.getParent();
+		WEB_ROOT_PATH = deployPath;
 		
 		LOG4J2_CONFIG_PATH = WEB_ROOT_PATH + CommonConstants.LOG4J2_CONFIG_FILE_RELATIVE_PATH;
 		DB_CONNECT_INFO_FILE_PATH = WEB_ROOT_PATH + CommonConstants.DB_CONNECT_INFO_FILE_RELATIVE_PATH;
