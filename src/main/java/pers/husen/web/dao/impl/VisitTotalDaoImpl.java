@@ -18,7 +18,7 @@ public class VisitTotalDaoImpl implements VisitTotalDao {
 	public int queryVisitTotal() {
 		String sql = "SELECT visit_count as count FROM visit_total WHERE visit_id = ?";
 		ArrayList<Object> paramList = new ArrayList<Object>();
-		paramList.add(0);
+		paramList.add(1);
 		
 		return DbQueryUtils.queryIntByParam(sql, paramList);
 	}
@@ -37,8 +37,8 @@ public class VisitTotalDaoImpl implements VisitTotalDao {
 		String sqlTotal = "UPDATE visit_total SET visit_count = (( SELECT selTmp.visit_count FROM (select tmp.* from visit_total tmp) AS selTmp WHERE visit_id = ? ) + 1) WHERE visit_id = ?";
 		ArrayList<Object> paramList = new ArrayList<Object>();
 		
-		paramList.add(0);
-		paramList.add(0);
+		paramList.add(1);
+		paramList.add(1);
 		DbManipulationUtils.updateRecordByParam(sqlTotal, paramList);
 		paramList.clear();
 		

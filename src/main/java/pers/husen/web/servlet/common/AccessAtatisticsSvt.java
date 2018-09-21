@@ -32,9 +32,9 @@ public class AccessAtatisticsSvt extends HttpServlet {
     	response.setContentType("text/html; charset=UTF-8");
     	
     	AccessAtatisticsPo aPo = new AccessAtatisticsPo();
-		aPo.setAccessToday((int) this.getServletContext().getAttribute("visitToday"));
-		aPo.setAccessTotal((int) this.getServletContext().getAttribute("visitTotal"));
-		aPo.setOnlineCurrent((int) this.getServletContext().getAttribute("onlineCount"));
+		aPo.setAccessToday((Integer) this.getServletContext().getAttribute("visitToday"));
+		aPo.setAccessTotal((Integer) this.getServletContext().getAttribute("visitTotal"));
+		aPo.setOnlineCurrent((Integer) this.getServletContext().getAttribute("onlineCount"));
 		
 		String json = JSONObject.fromObject(aPo).toString();
 		PrintWriter out = response.getWriter();

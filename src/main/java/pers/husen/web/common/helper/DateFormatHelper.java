@@ -15,13 +15,16 @@ import java.util.Date;
  */
 public class DateFormatHelper {
 	public static void main(String[] args) {
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS");
+		String dateString = formatter.format(formatDateYMD());
+		System.out.println(dateString);
 		// VisitTotalDaoImpl vImpl = new VisitTotalDaoImpl();
 		// vImpl.updateVisitCount();
 		// System.out.println(formatDateYMD());
 		// System.out.println(new Date());
-		System.out.println(DateFormatHelper.secondsTodayTotal());
-		System.out.println((12 * 60 + 22) * 60);
-		System.out.println(DateFormatHelper.dateNumberFormat());
+//		System.out.println(DateFormatHelper.secondsTodayTotal());
+//		System.out.println((12 * 60 + 22) * 60);
+//		System.out.println(DateFormatHelper.dateNumberFormat());
 	}
 
 	public static Date formatNowDateHelper() {
