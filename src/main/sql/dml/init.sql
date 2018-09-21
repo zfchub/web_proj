@@ -1,5 +1,5 @@
 /**  文章目录 */
-INSERT INTO article_category(category_id, category_name, create_date, category_delete) VALUES (0, '所有文章', '2017-12-12 18:11:34', 0);
+INSERT INTO article_category(category_id, category_name, create_date, category_delete) VALUES (1, '所有文章', '2017-12-12 18:11:34', 0);
 
 /** 博客demo */
 INSERT INTO blog_details(blog_id, blog_title, blog_author, blog_date, blog_read, blog_summary, blog_html_content, blog_md_content, blog_label, blog_delete, blog_category) VALUES (1, '第一篇博客', 'husen', '2018-02-10 20:22:36', 0, '博客demo', '这是测试博客的第一篇文章', '这是测试博客的第一篇文章', '博客 测试', 0, 0);
@@ -8,7 +8,7 @@ INSERT INTO blog_details(blog_id, blog_title, blog_author, blog_date, blog_read,
 INSERT INTO code_library(code_id, code_title, code_author, code_date, code_read, code_summary, code_html_content, code_md_content, code_label, code_delete, code_category) VALUES (1, '第一篇代码', 'husen', '2018-02-10 20:25:38', 0, '代码demo', '这是测试代码的第一篇文章', '这是测试代码的第一篇文章', '代码 测试', 0, 0);
 
 /** 版本特性 */
-INSERT INTO release_feature(release_id, release_author, release_date, release_number, release_content) VALUES (0, '何明胜', '2017-09-30 16:20:29', 'V1.0.3', '<p>1、主页显示版本特性、最近更新及其他栏目导航</p>
+INSERT INTO release_feature(release_id, release_author, release_date, release_number, release_content) VALUES (1, '何明胜', '2017-09-30 16:20:29', 'V1.0.3', '<p>1、主页显示版本特性、最近更新及其他栏目导航</p>
 
 <p>2、实现发表博客、查看博客、浏览量统计、选择每页显示的博客数量等</p>
 
@@ -26,4 +26,4 @@ INSERT INTO user_info(user_id, user_name, user_password, user_email, user_phone,
 INSERT INTO user_info(user_id, user_name, user_password, user_email, user_phone, user_age, user_sex, user_address, user_head_url, user_nick_name) VALUES (3, 'admin', 'c19380b712c30d00881bc9cfb3c74050', '940706904@qq.com', NULL, NULL, NULL, NULL, NULL, NULL);
 
 /** 网站访问统计 */
-INSERT INTO visit_total(visit_id, visit_date, visit_count) VALUES (0, '2017-09-29', 0);
+INSERT INTO visit_total(visit_id, visit_date, visit_count) VALUES (1, '2017-09-29', 0);
