@@ -3,38 +3,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <filter>
-        <filter-name>LogFilter</filter-name>
-        <filter-class>com.angel.Filter.LogFilter</filter-class>
-        <init-param>
-            <param-name>Site</param-name>
-            <param-value>菜鸟教程</param-value>
-        </init-param>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>LogFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <servlet>
-        <servlet-name>ErrorHandler</servlet-name>
-        <servlet-class>com.angel.Handler.ErrorHandler</servlet-class>
-    </servlet>
-    <!-- servlet mappings -->
-    <servlet-mapping>
-        <servlet-name>ErrorHandler</servlet-name>
-        <url-pattern>/ErrorHandler</url-pattern>
-    </servlet-mapping>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/ErrorHandler</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type >
-        <location>/ErrorHandler</location>
-    </error-page>
-
+    <display-name>web-pc</display-name>
+    <description>默认欢迎列表</description>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <description>设置session的有效时间(分钟)</description>
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
     <description>初始化路径的配置和log4j配置</description>
     <listener>
         <listener-class>pers.husen.web.config.listener.WebInitConfigListener</listener-class>
