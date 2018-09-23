@@ -9,15 +9,12 @@ import pers.husen.web.common.constants.CommonConstants;
 import pers.husen.web.config.listener.WebInitConfigListener;
 
 /**
- * @author 何明胜
- *
- * 2017年9月28日
+ * 项目部署配置
  */
 public class ProjectDeployConfig {
 	/** 存储当前工程是本地测试还是远程部署的变量  */
 	public static Boolean IS_REMOTE_DEPLOY = null;
-	
-	
+
 	/** 工程部署路径,如 本地为 web\WebContent\, 服务器为/web  **/
 	public static File WEB_DEPLOY_PATH;
 	

@@ -20,9 +20,7 @@ import pers.husen.web.common.helper.StackTrace2Str;
 import pers.husen.web.config.listener.WebInitConfigListener;
 
 /**
- * @author 何明胜
- *
- *         2017年9月23日
+ * log4j init
  */
 public class Log4j2Config {
 	public void startLog4j2Config() {
@@ -61,7 +59,7 @@ public class Log4j2Config {
 
 	/**
 	 * 配置本地开发日志文件存放位置
-	 * 
+	 *
 	 * @param xmlFilePath
 	 * @param logsParentDir
 	 */

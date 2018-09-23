@@ -12,10 +12,6 @@ import pers.husen.web.service.VisitTotalSvc;
 
 /**
  * 网站访问统计监听
- *
- * @author 何明胜
- *
- *         2017年10月20日
  */
 @WebListener
 public class OnlineCountListener implements HttpSessionListener {
@@ -35,10 +31,10 @@ public class OnlineCountListener implements HttpSessionListener {
 			count = new Integer(co + 1);
 		}
 
-		// 保存人数
+		// 保存在线人数
 		context.setAttribute("onlineCount", count);
 		
-		// 会话创建直接总访问量加1
+		// 会话创建直接总访问量加1，今日访问量加1
 		VisitTotalSvc vSvc = new VisitTotalSvc();
 		vSvc.updateVisitCount();
 		int today = vSvc.queryVisitToday();
@@ -52,8 +48,12 @@ public class OnlineCountListener implements HttpSessionListener {
 				context.getAttribute("visitToday") + ", visitTotal:" + context.getAttribute("visitTotal"));
 	}
 
+    /**
+     * session销毁时调用
+     */
 	@Override
 	public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
+	    // 在线人数减去1
 		ServletContext context = httpSessionEvent.getSession().getServletContext();
 		Integer count = (Integer) context.getAttribute("onlineCount");
 		int co = count.intValue();

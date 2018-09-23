@@ -8,7 +8,7 @@ package pers.husen.web.dao;
  */
 public interface VisitTotalDao {
 	/**
-	 * 查询所有访问量
+	 * 查询历史总访问量
 	 * @return
 	 */
 	public int queryVisitTotal();
@@ -22,7 +22,6 @@ public interface VisitTotalDao {
 	/**
 	 * 更新当日访问量和总访问量
 	 * 
-	 * @param visitDate
 	 * @return
 	 */
 	public int updateVisitCount();

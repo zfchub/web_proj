@@ -34,6 +34,7 @@ public class VisitTotalDaoImpl implements VisitTotalDao {
 
 	@Override
 	public int updateVisitCount() {
+		// 历史总访问量加1
 		String sqlTotal = "UPDATE visit_total SET visit_count = (( SELECT selTmp.visit_count FROM (select tmp.* from visit_total tmp) AS selTmp WHERE visit_id = ? ) + 1) WHERE visit_id = ?";
 		ArrayList<Object> paramList = new ArrayList<Object>();
 		
@@ -50,13 +51,15 @@ public class VisitTotalDaoImpl implements VisitTotalDao {
 		if(result == -1) {
 			return -1;
 		}
-		
+
+		// 今日总访问量初始为1
 		if(result == 0) {
 			String insertSql = "INSERT INTO visit_total (visit_date, visit_count) VALUES (?, ?)";
 			paramList.add(1);
 			return DbManipulationUtils.insertNewRecord(insertSql, paramList);
 		}
-		
+
+		// 今日总访问量加1
 		String sqlToday = "UPDATE visit_total SET visit_count = (( SELECT selTmp.visit_count FROM (select tmp.* from visit_total tmp) AS selTmp WHERE visit_date = ?) + 1) WHERE visit_date = ?";
 		paramList.add(currentDate);
 		return DbManipulationUtils.updateRecordByParam(sqlToday, paramList);

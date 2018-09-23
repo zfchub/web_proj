@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,6 +22,7 @@ import pers.husen.web.common.helper.StackTrace2Str;
  *
  * 2017年11月7日
  */
+@WebFilter(urlPatterns = "/*", description = "错误捕获")
 public class ExceptionFilter implements Filter {
 	private final Logger logger = LogManager.getLogger(ExceptionFilter.class);
 	
