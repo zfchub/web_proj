@@ -37,6 +37,7 @@ function queryLatestCode(pageSize){
 				loadSimpleCode(response[x]);
 			}
 		},
+		// 报错弹窗
 		error : function(response, status){
 			$.confirm({
 			    title: '代码库加载出错',

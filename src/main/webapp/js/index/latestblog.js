@@ -30,6 +30,7 @@ function queryLatestBlog(pageSize){
 				loadSimpleBlog(response[x]);
 			}
 		},
+		// 报错弹窗
 		error : function(XMLHttpRequest, textStatus){
 			$.confirm({
 			    title: '博客加载出错',
