@@ -61,12 +61,14 @@ public class BlogArticleDaoImpl implements BlogArticleDao{
 		
 		ArrayList<Object> paramList = new ArrayList<Object>();
 		paramList.add(DbConstans.FIELD_VALID_FLAG);
-		
+
+		// 博客标题
 		if(bVo.getBlogTitle() != null && !bVo.getBlogTitle().trim().isEmpty()) {
 			sql += " AND " + BlogDetailsMapping.BLOG_TITLE + " REGEXP ? ";
 			bVo.setBlogTitle("^.*" + bVo.getBlogTitle() + ".*$");
 			paramList.add(bVo.getBlogTitle());
 		}
+		// 博客类别
 		if(bVo.getBlogCategory() != -1) {
 			sql += " AND " + BlogDetailsMapping.BLOG_CATEGOTY + " = ?";
 			paramList.add(bVo.getBlogCategory());

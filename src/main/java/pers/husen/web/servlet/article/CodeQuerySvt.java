@@ -89,7 +89,7 @@ public class CodeQuerySvt extends HttpServlet {
 			
 			return;
 		}
-		/** 如果是查询上一篇有效代码 */
+		/** 如果是查询下一篇有效代码 */
 		String queryNext = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_NEXT;
 		if (queryNext.equals(requestType)) {
 			int codeId = Integer.parseInt(request.getParameter("codeId"));
