@@ -87,7 +87,7 @@ public class DbConnectUtils {
 	/**
 	 * 关闭连接
 	 * @param rs
-	 * @param st
+	 * @param ps
 	 * @param conn
 	 */
 	public static void closeResouce(ResultSet rs, PreparedStatement ps, Connection conn) {

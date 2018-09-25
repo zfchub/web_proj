@@ -153,15 +153,15 @@ public class TypeTransformUtils {
 	/**
 	 * 根据字段名称获取当前类及其父类中的变量
 	 * @param <T>
-	 * @param methodName
+	 * @param fieldName
 	 * @return
 	 */
-	public static <T> Class<?> getDeclaredField(Class<T> currClass, String methodName) {
+	public static <T> Class<?> getDeclaredField(Class<T> currClass, String fieldName) {
 		Class<?> fieldClass = null;
 
 		for (Class<?> clazz = currClass; clazz != Object.class; clazz = clazz.getSuperclass()) {
 			try {
-				fieldClass = clazz.getDeclaredField(methodName).getType();
+				fieldClass = clazz.getDeclaredField(fieldName).getType();
 				return fieldClass;
 			} catch (Exception e) {
 				// 这里甚么都不要做！并且这里的异常必须这样写，不能抛出去。
