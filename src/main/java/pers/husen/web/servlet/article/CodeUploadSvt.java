@@ -23,7 +23,8 @@ import pers.husen.web.service.CodeLibrarySvc;
  *
  *         2017年11月7日
  */
-@WebServlet(urlPatterns = "/code/upload.hms")
+//@WebServlet(urlPatterns = "/code/upload.hms")
+@Deprecated
 public class CodeUploadSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

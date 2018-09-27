@@ -17,7 +17,8 @@ import pers.husen.web.common.helper.ReadH5Helper;
  *
  * @created 2017年12月27日 下午3:28:38
  */
-@WebServlet(urlPatterns = "/usercenter.hms")
+//@WebServlet(urlPatterns = "/usercenter.hms")
+@Deprecated
 public class PersonalCenterSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

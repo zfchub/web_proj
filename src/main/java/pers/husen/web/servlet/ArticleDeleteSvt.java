@@ -20,7 +20,8 @@ import pers.husen.web.service.CodeLibrarySvc;
  *
  *         2017年11月8日
  */
-@WebServlet(urlPatterns = "/article/delete.hms")
+//@WebServlet(urlPatterns = "/article/delete.hms")
+@Deprecated
 public class ArticleDeleteSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,33 +31,33 @@ public class ArticleDeleteSvt extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		
-		PrintWriter out = response.getWriter();
-		
-		String requestType = request.getParameter("type");
-		/** 如果是删除博客 */
-		String logicDeleteBlog = RequestConstants.REQUEST_TYPE_LOGIC_DELETE + RequestConstants.MODE_BLOG;
-		if(logicDeleteBlog.equals(requestType)) {
-			int blogId = Integer.parseInt(request.getParameter("blogId"));
-			BlogArticleSvc bSvc = new BlogArticleSvc();
-			int result = bSvc.logicDeleteBlogById(blogId);
-			
-			out.println(result);
-			
-			return;
-		}
-		/** 如果是删除代码 */
-		String logicDeleteCode = RequestConstants.REQUEST_TYPE_LOGIC_DELETE + RequestConstants.MODE_CODE;
-		if(logicDeleteCode.equals(requestType)) {
-			int codeId = Integer.parseInt(request.getParameter("codeId"));
-			CodeLibrarySvc cSvc = new CodeLibrarySvc();
-			int result = cSvc.logicDeleteCodeById(codeId);
-			
-			out.println(result);
-			
-			return;
-		}
+//		response.setCharacterEncoding("UTF-8");
+//
+//		PrintWriter out = response.getWriter();
+//
+//		String requestType = request.getParameter("type");
+//		/** 如果是删除博客 */
+//		String logicDeleteBlog = RequestConstants.REQUEST_TYPE_LOGIC_DELETE + RequestConstants.MODE_BLOG;
+//		if(logicDeleteBlog.equals(requestType)) {
+//			int blogId = Integer.parseInt(request.getParameter("blogId"));
+//			BlogArticleSvc bSvc = new BlogArticleSvc();
+//			int result = bSvc.logicDeleteBlogById(blogId);
+//
+//			out.println(result);
+//
+//			return;
+//		}
+//		/** 如果是删除代码 */
+//		String logicDeleteCode = RequestConstants.REQUEST_TYPE_LOGIC_DELETE + RequestConstants.MODE_CODE;
+//		if(logicDeleteCode.equals(requestType)) {
+//			int codeId = Integer.parseInt(request.getParameter("codeId"));
+//			CodeLibrarySvc cSvc = new CodeLibrarySvc();
+//			int result = cSvc.logicDeleteCodeById(codeId);
+//
+//			out.println(result);
+//
+//			return;
+//		}
 	}
 
 	@Override

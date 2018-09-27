@@ -22,7 +22,8 @@ import pers.husen.web.service.UserInfoSvc;
  *
  * @created 2017年12月26日 下午2:58:15
  */
-@WebServlet(urlPatterns = "/users/query.hms")
+//@WebServlet(urlPatterns = "/users/query.hms")
+@Deprecated
 public class UsersQuerySvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,29 +33,29 @@ public class UsersQuerySvt extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("application/json; charset=UTF-8");
-		
-		Integer draw = Integer.parseInt(request.getParameter("draw"));
-		Integer start = Integer.parseInt(request.getParameter("start"));
-		Integer length = Integer.parseInt(request.getParameter("length"));
-		
-		PrintWriter out = response.getWriter();
-		UserInfoVo uVo = new UserInfoVo();
-		UserInfoSvc uSvc = new UserInfoSvc();
-		
-		Integer recordsTotal = uSvc.queryUserTotalCount(uVo);
-		ArrayList<UserInfoVo> uVos = uSvc.queryUserPerPage(uVo, length, start);
-		String json = JSONArray.fromObject(uVos).toString();
-		
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("draw", draw);
-		jsonObject.put("recordsTotal", recordsTotal);
-		jsonObject.put("recordsFiltered", recordsTotal);
-		jsonObject.element("data", json);
-		
-		out.println(jsonObject);
+//		request.setCharacterEncoding("UTF-8");
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("application/json; charset=UTF-8");
+//
+//		Integer draw = Integer.parseInt(request.getParameter("draw"));
+//		Integer start = Integer.parseInt(request.getParameter("start"));
+//		Integer length = Integer.parseInt(request.getParameter("length"));
+//
+//		PrintWriter out = response.getWriter();
+//		UserInfoVo uVo = new UserInfoVo();
+//		UserInfoSvc uSvc = new UserInfoSvc();
+//
+//		Integer recordsTotal = uSvc.queryUserTotalCount(uVo);
+//		ArrayList<UserInfoVo> uVos = uSvc.queryUserPerPage(uVo, length, start);
+//		String json = JSONArray.fromObject(uVos).toString();
+//
+//		JSONObject jsonObject = new JSONObject();
+//		jsonObject.put("draw", draw);
+//		jsonObject.put("recordsTotal", recordsTotal);
+//		jsonObject.put("recordsFiltered", recordsTotal);
+//		jsonObject.element("data", json);
+//
+//		out.println(jsonObject);
 	}
 
 	@Override

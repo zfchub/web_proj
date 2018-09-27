@@ -20,7 +20,8 @@ import pers.husen.web.service.FileDownloadSvc;
  *
  * 2017年10月20日
  */
-@WebServlet(urlPatterns="/fileUpload.hms")
+// @WebServlet(urlPatterns="/fileUpload.hms")
+@Deprecated
 public class FileUploadSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,25 +31,25 @@ public class FileUploadSvt extends HttpServlet {
     
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FileUploadHandler fileUploadHandler = new FileUploadHandler();
-		String fileName = fileUploadHandler.fileUploadHandler(request);
-		//int insertResult = 0;
-		
-		//不为null则上传成功
-		if(fileName != null) {
-			FileDownloadVo fVo = new FileDownloadVo();
-			fVo.setFileName(fileName);
-			fVo.setFileUrl(fileName);
-			fVo.setFileUploadDate(new Date());
-			fVo.setFileDownloadCount(0);
-			
-			FileDownloadSvc fSvc = new FileDownloadSvc();
-			fSvc.insertFileDownload(fVo);
-		}
-		
-		response.sendRedirect("/personal_center/mycenter.jsp");
-		/*PrintWriter out = response.getWriter();
-		out.println(insertResult);*/
+//		FileUploadHandler fileUploadHandler = new FileUploadHandler();
+//		String fileName = fileUploadHandler.fileUploadHandler(request);
+//		//int insertResult = 0;
+//
+//		//不为null则上传成功
+//		if(fileName != null) {
+//			FileDownloadVo fVo = new FileDownloadVo();
+//			fVo.setFileName(fileName);
+//			fVo.setFileUrl(fileName);
+//			fVo.setFileUploadDate(new Date());
+//			fVo.setFileDownloadCount(0);
+//
+//			FileDownloadSvc fSvc = new FileDownloadSvc();
+//			fSvc.insertFileDownload(fVo);
+//		}
+//
+//		response.sendRedirect("/personal_center/mycenter.jsp");
+//		/*PrintWriter out = response.getWriter();
+//		out.println(insertResult);*/
 	}
 
     @Override

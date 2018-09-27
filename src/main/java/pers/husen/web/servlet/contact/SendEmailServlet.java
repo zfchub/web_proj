@@ -18,7 +18,8 @@ import pers.husen.web.common.helper.SendEmailHelper;
  *
  * 2017年10月20日
  */
-@WebServlet(urlPatterns="/sendEmail.hms")
+//@WebServlet(urlPatterns="/sendEmail.hms")
+@Deprecated
 public class SendEmailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -22,7 +22,8 @@ import pers.husen.web.service.ReleaseFeatureSvc;
  *
  * 2017年10月20日
  */
-@WebServlet(urlPatterns="/editRlseFetr.hms")
+//@WebServlet(urlPatterns="/editRlseFetr.hms")
+@Deprecated
 public class EditRlseFetrSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

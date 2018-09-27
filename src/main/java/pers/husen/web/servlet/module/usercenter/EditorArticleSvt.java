@@ -17,7 +17,8 @@ import pers.husen.web.common.helper.ReadH5Helper;
  *
  * @created 2017年12月27日 下午3:56:11
  */
-@WebServlet(urlPatterns = "/editor/article.hms")
+//@WebServlet(urlPatterns = "/editor/article.hms")
+@Deprecated
 public class EditorArticleSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

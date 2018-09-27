@@ -23,7 +23,8 @@ import pers.husen.web.service.BlogArticleSvc;
  *
  *         2017年11月7日
  */
-@WebServlet(urlPatterns = "/blog/upload.hms")
+//@WebServlet(urlPatterns = "/blog/upload.hms")
+@Deprecated
 public class BlogUploadSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,45 +35,45 @@ public class BlogUploadSvt extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 获取文章细节
-		String newArticle = request.getParameter("newArticle");
-		// 转化为json
-		JSONObject jsonObject = JSONObject.fromObject(newArticle);
-		// 转化为bean
-		BlogArticleVo bVo = TypeConvertHelper.jsonObj2BlogBean(jsonObject);
-		// 如果不是以逗号分隔的，关键字之间的多个空格都处理为一个
-		String blogLabel = bVo.getBlogLabel();
-		if (blogLabel.indexOf(CommonConstants.ENGLISH_COMMA) == -1
-				&& blogLabel.indexOf(CommonConstants.CHINESE_COMMA) == -1) {
-			bVo.setBlogLabel(blogLabel.replaceAll("\\s+", " "));
-		}
-		if (blogLabel.indexOf(CommonConstants.CHINESE_COMMA) != -1) {
-			bVo.setBlogLabel(blogLabel.replace("，", ","));
-		}
-
-		BlogArticleSvc bSvc = new BlogArticleSvc();
-		PrintWriter out = response.getWriter();
-		String uploadType = request.getParameter("type");
-
-		/** 如果是修改博客 */
-		if (RequestConstants.REQUEST_TYPE_MODIFY.equals(uploadType)) {
-			// 获取id
-			int blogId = Integer.parseInt(request.getParameter("articleId"));
-			// 设置id
-			bVo.setBlogId(blogId);
-
-			int insertResult = bSvc.updateBlogById(bVo);
-			out.println(insertResult);
-
-			return;
-		}
-		/** 如果是上传新博客 */
-		if (RequestConstants.REQUEST_TYPE_CREATE.equals(uploadType)) {
-			int resultInsert = bSvc.insertBlogArticle(bVo);
-			out.println(resultInsert);
-
-			return;
-		}
+//		// 获取文章细节
+//		String newArticle = request.getParameter("newArticle");
+//		// 转化为json
+//		JSONObject jsonObject = JSONObject.fromObject(newArticle);
+//		// 转化为bean
+//		BlogArticleVo bVo = TypeConvertHelper.jsonObj2BlogBean(jsonObject);
+//		// 如果不是以逗号分隔的，关键字之间的多个空格都处理为一个
+//		String blogLabel = bVo.getBlogLabel();
+//		if (blogLabel.indexOf(CommonConstants.ENGLISH_COMMA) == -1
+//				&& blogLabel.indexOf(CommonConstants.CHINESE_COMMA) == -1) {
+//			bVo.setBlogLabel(blogLabel.replaceAll("\\s+", " "));
+//		}
+//		if (blogLabel.indexOf(CommonConstants.CHINESE_COMMA) != -1) {
+//			bVo.setBlogLabel(blogLabel.replace("，", ","));
+//		}
+//
+//		BlogArticleSvc bSvc = new BlogArticleSvc();
+//		PrintWriter out = response.getWriter();
+//		String uploadType = request.getParameter("type");
+//
+//		/** 如果是修改博客 */
+//		if (RequestConstants.REQUEST_TYPE_MODIFY.equals(uploadType)) {
+//			// 获取id
+//			int blogId = Integer.parseInt(request.getParameter("articleId"));
+//			// 设置id
+//			bVo.setBlogId(blogId);
+//
+//			int insertResult = bSvc.updateBlogById(bVo);
+//			out.println(insertResult);
+//
+//			return;
+//		}
+//		/** 如果是上传新博客 */
+//		if (RequestConstants.REQUEST_TYPE_CREATE.equals(uploadType)) {
+//			int resultInsert = bSvc.insertBlogArticle(bVo);
+//			out.println(resultInsert);
+//
+//			return;
+//		}
 	}
 
 	@Override

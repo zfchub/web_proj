@@ -17,7 +17,8 @@ import pers.husen.web.common.helper.ReadH5Helper;
  *
  * @created 2017年12月20日 下午9:33:13
  */
-@WebServlet(urlPatterns = "/module/contact.hms")
+//@WebServlet(urlPatterns = "/module/contact.hms")
+@Deprecated
 public class ContactModuleSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

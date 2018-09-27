@@ -24,7 +24,8 @@ import pers.husen.web.service.MessageAreaSvc;
  *
  * 2017年10月20日
  */
-@WebServlet(urlPatterns="/message.hms")
+//@WebServlet(urlPatterns="/message.hms")
+@Deprecated
 public class MessageSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,44 +35,44 @@ public class MessageSvt extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=utf-8"); 
-		PrintWriter out = response.getWriter();
-		
-		String requestType = request.getParameter("type");
-		/** 如果是获取所有留言, 目前留言是查询所有，然后到前端分页  */
-		String queryAllMsg = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_ALL;
-		if(queryAllMsg.equals(requestType)) {
-			//获取id
-			int messageId = Integer.parseInt(request.getParameter("messageId"));
-			
-			MessageAreaSvc mSvc = new MessageAreaSvc();
-			ArrayList<MessageAreaVo> mVos = mSvc.queryAllMessageArea(messageId);
-
-			String json =JSONArray.fromObject(mVos).toString();
-			out.println(json);
-			
-			return;
-		}
-		/** 如果是请求上传新留言 */
-		String createOneMsg = RequestConstants.REQUEST_TYPE_CREATE + RequestConstants.MODE_ONE;
-		if(createOneMsg.equals(requestType)) {
-			String newMessage = request.getParameter("newMessage");
-			JSONObject jsonObject = JSONObject.fromObject(newMessage);
-			MessageAreaVo mVo  = TypeConvertHelper.jsonObj2MessageBean(jsonObject);
-			
-			//插入数据
-			MessageAreaSvc mSvc = new MessageAreaSvc();
-			int messageId = mSvc.insertMessageNew(mVo);
-			
-			JSONObject jsObject = new JSONObject();
-			jsObject.put("result", 1);
-			jsObject.put("messageId", messageId);
-			
-			out.println(jsObject);
-			
-			return;
-		}
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html;charset=utf-8");
+//		PrintWriter out = response.getWriter();
+//
+//		String requestType = request.getParameter("type");
+//		/** 如果是获取所有留言, 目前留言是查询所有，然后到前端分页  */
+//		String queryAllMsg = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_ALL;
+//		if(queryAllMsg.equals(requestType)) {
+//			//获取id
+//			int messageId = Integer.parseInt(request.getParameter("messageId"));
+//
+//			MessageAreaSvc mSvc = new MessageAreaSvc();
+//			ArrayList<MessageAreaVo> mVos = mSvc.queryAllMessageArea(messageId);
+//
+//			String json =JSONArray.fromObject(mVos).toString();
+//			out.println(json);
+//
+//			return;
+//		}
+//		/** 如果是请求上传新留言 */
+//		String createOneMsg = RequestConstants.REQUEST_TYPE_CREATE + RequestConstants.MODE_ONE;
+//		if(createOneMsg.equals(requestType)) {
+//			String newMessage = request.getParameter("newMessage");
+//			JSONObject jsonObject = JSONObject.fromObject(newMessage);
+//			MessageAreaVo mVo  = TypeConvertHelper.jsonObj2MessageBean(jsonObject);
+//
+//			//插入数据
+//			MessageAreaSvc mSvc = new MessageAreaSvc();
+//			int messageId = mSvc.insertMessageNew(mVo);
+//
+//			JSONObject jsObject = new JSONObject();
+//			jsObject.put("result", 1);
+//			jsObject.put("messageId", messageId);
+//
+//			out.println(jsObject);
+//
+//			return;
+//		}
 	}
 
     @Override
