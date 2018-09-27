@@ -30,7 +30,7 @@ $(document).ready(
 function loadAccessStatistics() {
 	$.ajax({
 		type : 'POST',
-		url : '/accessAtatistics.hms',
+		url : '/accessStatistics.hms',
 		dataType : 'json',
 		success : function(response, ststus) {
 			$('#txt_accessToday').html('今日访问量:' + response.accessToday + ',');

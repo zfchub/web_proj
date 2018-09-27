@@ -74,7 +74,7 @@ function getCategory3Num(type){
 		dataType : 'json',
 		data : {
 			type : 'query_category',
-			'class' : type,
+			classify : type,
 		},
 		success : function(response) {
 			var $category = $('#txt_articleCategory').children(".list-unstyled");

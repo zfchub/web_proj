@@ -23,7 +23,8 @@ import pers.husen.web.service.ArticleCategorySvc;
  *
  * @created 2017年12月12日 上午10:45:48
  */
-@WebServlet(urlPatterns = "/category.hms")
+//@WebServlet(urlPatterns = "/category.hms")
+@Deprecated
 public class CategorySvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,52 +35,52 @@ public class CategorySvt extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-
-		PrintWriter out = response.getWriter();
-		ArticleCategorySvc aSvc = new ArticleCategorySvc();
-		String requestType = request.getParameter(RequestConstants.PARAM_TYPE);
-
-		/** 如果是创建新的分类 **/
-		if (RequestConstants.REQUEST_TYPE_CREATE.equals(requestType)) {
-			ArticleCategoryVo aVo = new ArticleCategoryVo();
-			aVo.setCategoryName(request.getParameter("cateName"));
-			aVo.setCreateDate(new Date());
-
-			int resultInsert = aSvc.insertCategory(aVo);
-
-			if (resultInsert == 1) {
-				int curCateId = aSvc.queryMaxId();
-				out.println(curCateId);
-
-				return;
-			}
-		}
-
-		/** 如果是查询文章分类（数量不为0的） **/
-		String queryCategory = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_CATEGORY;
-		if (queryCategory.equals(requestType)) {
-			String classification = request.getParameter("class");
-			ArrayList<ArticleCategoryVo> aVos = aSvc.queryCategory3Num(classification);
-			String json = JSONArray.fromObject(aVos).toString();
-
-			out.println(json);
-
-			return;
-		}
-		
-		/** 如果是查询所有分类 **/
-		String queryAll = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_ALL;
-		if(queryAll.equals(requestType)) {
-			ArrayList<ArticleCategoryVo> aVos = aSvc.queryAllCategory();
-			String json = JSONArray.fromObject(aVos).toString();
-
-			out.println(json);
-
-			return;
-		}
+//		request.setCharacterEncoding("UTF-8");
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html; charset=UTF-8");
+//
+//		PrintWriter out = response.getWriter();
+//		ArticleCategorySvc aSvc = new ArticleCategorySvc();
+//		String requestType = request.getParameter(RequestConstants.PARAM_TYPE);
+//
+//		/** 如果是创建新的分类 **/
+//		if (RequestConstants.REQUEST_TYPE_CREATE.equals(requestType)) {
+//			ArticleCategoryVo aVo = new ArticleCategoryVo();
+//			aVo.setCategoryName(request.getParameter("cateName"));
+//			aVo.setCreateDate(new Date());
+//
+//			int resultInsert = aSvc.insertCategory(aVo);
+//
+//			if (resultInsert == 1) {
+//				int curCateId = aSvc.queryMaxId();
+//				out.println(curCateId);
+//
+//				return;
+//			}
+//		}
+//
+//		/** 如果是查询文章分类（数量不为0的） **/
+//		String queryCategory = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_CATEGORY;
+//		if (queryCategory.equals(requestType)) {
+//			String classification = request.getParameter("class");
+//			ArrayList<ArticleCategoryVo> aVos = aSvc.queryCategory3Num(classification);
+//			String json = JSONArray.fromObject(aVos).toString();
+//
+//			out.println(json);
+//
+//			return;
+//		}
+//
+//		/** 如果是查询所有分类 **/
+//		String queryAll = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_ALL;
+//		if(queryAll.equals(requestType)) {
+//			ArrayList<ArticleCategoryVo> aVos = aSvc.queryAllCategory();
+//			String json = JSONArray.fromObject(aVos).toString();
+//
+//			out.println(json);
+//
+//			return;
+//		}
 	}
 
 	@Override

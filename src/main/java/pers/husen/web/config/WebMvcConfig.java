@@ -22,4 +22,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("/css", "/images", "/js", "/module", "/personal_center", "/plugins", "/topic")
                 .setCachePeriod(31556926);
     }
+
+
 }

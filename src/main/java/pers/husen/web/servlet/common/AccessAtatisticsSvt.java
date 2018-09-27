@@ -19,7 +19,8 @@ import pers.husen.web.bean.po.AccessAtatisticsPo;
  *
  * 2017年10月18日
  */
-@WebServlet(urlPatterns="/accessAtatistics.hms")
+//@WebServlet(urlPatterns="/accessAtatistics.hms")
+@Deprecated
 public class AccessAtatisticsSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,16 +30,16 @@ public class AccessAtatisticsSvt extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	response.setContentType("text/html; charset=UTF-8");
-    	
-    	AccessAtatisticsPo aPo = new AccessAtatisticsPo();
-		aPo.setAccessToday((Integer) this.getServletContext().getAttribute("visitToday"));
-		aPo.setAccessTotal((Integer) this.getServletContext().getAttribute("visitTotal"));
-		aPo.setOnlineCurrent((Integer) this.getServletContext().getAttribute("onlineCount"));
-		
-		String json = JSONObject.fromObject(aPo).toString();
-		PrintWriter out = response.getWriter();
-		out.println(json);
+//    	response.setContentType("text/html; charset=UTF-8");
+//
+//    	AccessAtatisticsPo aPo = new AccessAtatisticsPo();
+//		aPo.setAccessToday((Integer) this.getServletContext().getAttribute("visitToday"));
+//		aPo.setAccessTotal((Integer) this.getServletContext().getAttribute("visitTotal"));
+//		aPo.setOnlineCurrent((Integer) this.getServletContext().getAttribute("onlineCount"));
+//
+//		String json = JSONObject.fromObject(aPo).toString();
+//		PrintWriter out = response.getWriter();
+//		out.println(json);
 	}
 
     @Override

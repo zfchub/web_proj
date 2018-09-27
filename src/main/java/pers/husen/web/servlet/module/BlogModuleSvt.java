@@ -17,7 +17,8 @@ import pers.husen.web.common.helper.ReadH5Helper;
  *
  * @created 2017年12月20日 下午9:32:30
  */
-@WebServlet(urlPatterns = "/module/blog.hms")
+//@WebServlet(urlPatterns = "/module/blog.hms")
+@Deprecated
 public class BlogModuleSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,10 +28,10 @@ public class BlogModuleSvt extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		
-		ReadH5Helper.writeHtmlByName(ResponseConstants.BLOG_MODULE_TEMPLATE_PATH, response);
+//    	response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html; charset=UTF-8");
+//
+//		ReadH5Helper.writeHtmlByName(ResponseConstants.BLOG_MODULE_TEMPLATE_PATH, response);
 	}
 
     @Override

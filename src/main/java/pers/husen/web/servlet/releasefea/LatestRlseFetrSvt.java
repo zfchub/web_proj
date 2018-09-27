@@ -20,7 +20,8 @@ import pers.husen.web.service.ReleaseFeatureSvc;
  *
  * 2017年10月20日
  */
-@WebServlet(urlPatterns="/latestRlseFetr.hms")
+//@WebServlet(urlPatterns="/latestRlseFetr.hms")
+@Deprecated
 public class LatestRlseFetrSvt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,30 +31,30 @@ public class LatestRlseFetrSvt extends HttpServlet {
 
     @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		
-		PrintWriter out = response.getWriter();
-		ReleaseFeatureSvc rSvc = new ReleaseFeatureSvc();
-		ReleaseFeatureVo rVo; 
-		
-		String releaseId = request.getParameter("releaseId");
-		/** 如果是请求最新版本 id为 null或者0 */
-		if(releaseId == null || Integer.parseInt(releaseId) == 0) {
-			rVo = rSvc.queryLatestReleaseFeature();
-			String json = JSONObject.fromObject(rVo).toString();
-			out.println(json);
-			
-			return;
-		}
-		/** 如果是请求其他版本 */
-		if(releaseId != null && Integer.parseInt(releaseId) != 0) {
-			rVo = rSvc.queryReleaseById(Integer.parseInt(releaseId));
-			String json = JSONObject.fromObject(rVo).toString();
-			out.println(json);
-			
-			return;
-		}
+//		response.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html; charset=UTF-8");
+//
+//		PrintWriter out = response.getWriter();
+//		ReleaseFeatureSvc rSvc = new ReleaseFeatureSvc();
+//		ReleaseFeatureVo rVo;
+//
+//		String releaseId = request.getParameter("releaseId");
+//		/** 如果是请求最新版本 id为 null或者0 */
+//		if(releaseId == null || Integer.parseInt(releaseId) == 0) {
+//			rVo = rSvc.queryLatestReleaseFeature();
+//			String json = JSONObject.fromObject(rVo).toString();
+//			out.println(json);
+//
+//			return;
+//		}
+//		/** 如果是请求其他版本 */
+//		if(releaseId != null && Integer.parseInt(releaseId) != 0) {
+//			rVo = rSvc.queryReleaseById(Integer.parseInt(releaseId));
+//			String json = JSONObject.fromObject(rVo).toString();
+//			out.println(json);
+//
+//			return;
+//		}
 	}
 
     @Override

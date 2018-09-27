@@ -451,7 +451,7 @@ function loadCategory(){
 		dataType : 'json',
 		data : {
 			type : 'query_all',
-			'class' : isBlogOrCode(),
+			classify : isBlogOrCode(),
 		},
 		success : function(response) {
 			for(x in response){
