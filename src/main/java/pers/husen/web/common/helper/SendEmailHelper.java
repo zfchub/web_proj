@@ -1,25 +1,14 @@
 package pers.husen.web.common.helper;
 
-import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
-import java.util.Properties;
-
-import javax.mail.Address;
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.sun.mail.util.MailSSLSocketFactory;
-
 import pers.husen.web.common.constants.ResponseConstants;
+import pers.husen.web.common.util.EmailSendUtil;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.io.UnsupportedEncodingException;
 
 /**
  * 发送邮件
@@ -33,7 +22,7 @@ public class SendEmailHelper {
 	
 	public static void main(String[] args) {
 		SendEmailHelper sendEmail = new SendEmailHelper();
-		sendEmail.sendEmail2Admin("何明胜", "123@qwe.com", "", "这网站不错");
+		sendEmail.sendEmail2User("745195908@qq.com", 123456, "这网站不错", "这是模板邮件");
 	}
 	
 	public int sendEmail2RetrivePwd(String email, int randomCode) {
@@ -86,12 +75,12 @@ public class SendEmailHelper {
 	 */
 	public int sendEmail2User(String email, int randomCode, String subject, String mode) {
 		try {
-			Session session = setupSession();
+			Session session = EmailSendUtil.initSession();
 			
 			// 创建默认的 MimeMessage 对象
 			MimeMessage message = new MimeMessage(session);
 			// Set From: 头部头字段
-			message.setFrom(new InternetAddress("yige_robot@foxmail.com", "一格网站机器人", "UTF-8"));
+			message.setFrom(new InternetAddress("zhoufangchaoyx@sina.com", "一格网站机器人", "UTF-8"));
 			// 收件人电子邮箱 可用数组设置多个
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(email));
 	        
@@ -110,7 +99,7 @@ public class SendEmailHelper {
 			message.setContent(content, "text/html;charset=UTF-8");
 			
 			// 发送信息的工具
-			Transport transport = session.getTransport();
+			Transport transport = session.getTransport("smtp");
 			transport.connect();
 			// 对方的地址
 			transport.sendMessage(message, new Address[] { new InternetAddress(email) });
@@ -120,7 +109,7 @@ public class SendEmailHelper {
 			logger.info("发送邮件成功! 收件人：" + email);
 			
 			return ResponseConstants.RESPONSE_OPERATION_SUCCESS;
-		} catch (MessagingException | UnsupportedEncodingException | GeneralSecurityException mex) {
+		} catch (MessagingException | UnsupportedEncodingException mex) {
 			logger.error(StackTrace2Str.exceptionStackTrace2Str(mex));
 		}
 		
@@ -135,16 +124,16 @@ public class SendEmailHelper {
 	 * @param content
 	 * @return
 	 */
-	public int sendEmail2Admin(String name,String email, String phone, String content) {
+	public int sendEmail2Admin(String name, String email, String phone, String content) {
 		try {
-			Session session = setupSession();
+			Session session = EmailSendUtil.initSession();
 			
 			// 创建默认的 MimeMessage 对象
 			MimeMessage message = new MimeMessage(session);
 			// Set From: 头部头字段
-			message.setFrom(new InternetAddress("yige_robot@foxmail.com", "一格机器人", "UTF-8"));
+			message.setFrom(new InternetAddress("zhoufangchaoyx@sina.com", "一格机器人", "UTF-8"));
 			// 收件人电子邮箱 可用数组设置多个
-			message.addRecipient(Message.RecipientType.TO, new InternetAddress("husen@hemingsheng.cn"));
+			message.addRecipient(Message.RecipientType.TO, new InternetAddress("745195908@qq.com"));
 	        
 			// 设置标题
 			message.setSubject("个人网站联系站长邮件");
@@ -159,52 +148,21 @@ public class SendEmailHelper {
 			message.setContent(content, "text/html;charset=UTF-8");
 			
 			// 发送信息的工具
-			Transport transport = session.getTransport();
+			Transport transport = session.getTransport("smtp");
 			transport.connect();
 			// 对方的地址
-			transport.sendMessage(message, new Address[] { new InternetAddress("husen@hemingsheng.cn") });
+			transport.sendMessage(message, new Address[] { new InternetAddress("745195908@qq.com") });
 			// 关闭连接
 			transport.close();
 			
 			logger.info("发送邮件给站长成功! 收件人：" + email);
 			
 			return 1;
-		} catch (MessagingException | UnsupportedEncodingException | GeneralSecurityException mex) {
+		} catch (MessagingException | UnsupportedEncodingException mex) {
 			logger.error(StackTrace2Str.exceptionStackTrace2Str(mex));
 		}
 		
 		return 0;
 	}
-	
-	/**
-	 * 获取邮箱机器人登录邮箱session
-	 * @return
-	 * @throws GeneralSecurityException
-	 */
-	public Session setupSession() throws GeneralSecurityException {
-		// 建立属性对象
-		Properties properties = new Properties();
-		// 开启SSL
-		MailSSLSocketFactory sf = new MailSSLSocketFactory();
-		sf.setTrustAllHosts(true);
-		// 开启认证
-		properties.put("mail.smtp.auth", "true");
-		// 开启SSL
-		properties.put("mail.smtp.ssl.enable", "true");
-		properties.put("mail.smtp.ssl.socketFactory", sf);
-		// 设置邮件服务器主机名
-		properties.setProperty("mail.host", "smtp.qq.com");
-		// 设置端口
-		properties.setProperty("mail.smtp.port", "465");
 
-		// 根据认证获取默认session对象
-		Session session = Session.getDefaultInstance(properties, new Authenticator() {
-			@Override
-			public PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("yige_robot@foxmail.com", "xjsvsdyrekodfiah");
-			}
-		});
-		
-		return session;
-	}
 }
