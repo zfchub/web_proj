@@ -11,8 +11,6 @@ public class EmailSendUtil {
 
     private static String MAIL_SMTP_HOST = "smtp.sina.com";
 
-    private static String MAIL_SMTP_PORT = "25";
-
     private static String SINA_USER_NAME = "zhoufangchaoyx@sina.com";
 
     private static String SINA_USER_PASSWORD = "zfc141309";
@@ -24,8 +22,6 @@ public class EmailSendUtil {
         properties.put("mail.smtp.auth", MAIL_SMTP_AUTH);
         // SMTP服务器地址
         properties.put("mail.smtp.host", MAIL_SMTP_HOST);
-        // SMTP服务器端口号
-        properties.put("mail.smtp.port", MAIL_SMTP_PORT);
 
         Session session = Session.getDefaultInstance(properties, new Authenticator() {
             @Override

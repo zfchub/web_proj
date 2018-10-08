@@ -78,7 +78,7 @@ public class SendEmailHelper {
 			Session session = EmailSendUtil.initSession();
 			
 			// 创建默认的 MimeMessage 对象
-			MimeMessage message = new MimeMessage(session);
+			Message message = new MimeMessage(session);
 			// Set From: 头部头字段
 			message.setFrom(new InternetAddress("zhoufangchaoyx@sina.com", "一格网站机器人", "UTF-8"));
 			// 收件人电子邮箱 可用数组设置多个
@@ -102,7 +102,7 @@ public class SendEmailHelper {
 			Transport transport = session.getTransport("smtp");
 			transport.connect();
 			// 对方的地址
-			transport.sendMessage(message, new Address[] { new InternetAddress(email) });
+			transport.send(message);
 			// 关闭连接
 			transport.close();
 			
@@ -129,7 +129,7 @@ public class SendEmailHelper {
 			Session session = EmailSendUtil.initSession();
 			
 			// 创建默认的 MimeMessage 对象
-			MimeMessage message = new MimeMessage(session);
+			Message message = new MimeMessage(session);
 			// Set From: 头部头字段
 			message.setFrom(new InternetAddress("zhoufangchaoyx@sina.com", "一格机器人", "UTF-8"));
 			// 收件人电子邮箱 可用数组设置多个
@@ -151,7 +151,7 @@ public class SendEmailHelper {
 			Transport transport = session.getTransport("smtp");
 			transport.connect();
 			// 对方的地址
-			transport.sendMessage(message, new Address[] { new InternetAddress("745195908@qq.com") });
+			transport.send(message);
 			// 关闭连接
 			transport.close();
 			
