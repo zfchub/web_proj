@@ -20,7 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("/css", "/images", "/js", "/module", "/personal_center", "/plugins", "/topic")
-                .setCachePeriod(31556926);
+                .setCachePeriod(1000);
     }
 
 
