@@ -34,6 +34,7 @@ public class DbQueryUtils {
 	 * @return
 	 */
 	public static <T> ArrayList<T> queryBeanListByParam(String sql, ArrayList<Object> paramList, Class<T> classType) {
+		System.out.println(sql);
 		Connection conn = DbConnectUtils.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -69,6 +70,7 @@ public class DbQueryUtils {
 	 * @return
 	 */
 	public static <T> T queryBeanByParam(String sql, ArrayList<Object> paramList, Class<T> classType) {
+		System.out.println(sql);
 		Connection conn = DbConnectUtils.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -95,20 +97,24 @@ public class DbQueryUtils {
 	}
 
 	public static int queryIntByParam(String sql, ArrayList<Object> paramList) {
+		System.out.println(sql);
 		return ((Number) queryResultByParam(sql, paramList)).intValue();
 	}
 
 	public static String queryStringByParam(String sql, ArrayList<Object> paramList) {
+		System.out.println(sql);
 		return (String) queryResultByParam(sql, paramList);
 	}
 
 	public static Date queryDateByParam(String sql, ArrayList<Object> paramList) {
+		System.out.println(sql);
 		java.sql.Date sqlDate = (java.sql.Date) queryResultByParam(sql, paramList);
 		Date date = new Date(sqlDate.getTime());
 		return date;
 	}
 
 	public static boolean queryBooleanByParam(String sql, ArrayList<Object> paramList) {
+		System.out.println(sql);
 		return (boolean) queryResultByParam(sql, paramList);
 	}
 
@@ -120,6 +126,7 @@ public class DbQueryUtils {
 	 * @return
 	 */
 	private static Object queryResultByParam(String sql, ArrayList<Object> paramList) {
+		System.out.println(sql);
 		Connection conn = DbConnectUtils.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;

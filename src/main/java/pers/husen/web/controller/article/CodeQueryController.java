@@ -1,6 +1,7 @@
 package pers.husen.web.controller.article;
 
 import net.sf.json.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,13 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.CodeLibraryVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.old_service.CodeLibrarySvc;
+import pers.husen.web.service.CodeLibraryService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * user: zhoufangchao
@@ -25,6 +27,9 @@ import java.util.ArrayList;
 @RequestMapping("/code/query.hms")
 public class CodeQueryController {
     private static final long serialVersionUID = 1L;
+
+    @Autowired
+    private CodeLibraryService codeLibraryService;
 
     @GetMapping
     public void doGet(HttpServletRequest request, HttpServletResponse response,
@@ -62,7 +67,7 @@ public class CodeQueryController {
         String queryOnePage = RequestConstants.REQUEST_TYPE_QUERY + RequestConstants.MODE_ONE_PAGE;
         if (queryOnePage.equals(type)) {
 
-            ArrayList<CodeLibraryVo> cVos = cSvc.queryCodeLibraryPerPage(cVo, pageSize, pageNo);
+            List<CodeLibraryVo> cVos = codeLibraryService.queryCodeLibraryPerPage(cVo, pageSize, pageNo);
             String json = JSONArray.fromObject(cVos).toString();
 
             out.println(json);

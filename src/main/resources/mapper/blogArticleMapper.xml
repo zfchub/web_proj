@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.husen.web.dao.BlogArticleMapper">
+
+    <resultMap id="blogArticlesMap" type="pers.husen.web.bean.vo.BlogArticleVo">
+        <id column="blog_id" property=""/>
+    </resultMap>
+
+    <insert id="insertBlogArticle">
+
+    </insert>
+
+    <select id="queryAllBlogArticles" resultMap="blogArticlesMap">
+        SELECT blog_id, blog_title, blog_date,blog_html_content,blog_summary FROM blog_details
+    </select>
+
+    <select id="queryBlogTotalCount" resultType="int">
+        SELECT COUNT(*) FROM blog_details
+        <where>
+            blog_delete = #{blogDelete}
+            <if test="blogTitle != null blogTitle.length() > 0">
+                AND blog_title REGEXP #{blogTitle}
+            </if>
+            <if test="blogCategory != -1">
+                AND blog_category = #{blogCategory}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryBlogArticlePerPage" resultMap="blogArticlesMap">
+        SELECT blog_id, blog_title, blog_date, blog_author,
+        blog_summary, blog_read, blog_html_content, user_nick_name
+        FROM blog_details bd, user_info ui
+        <where>
+            bd.blog_author = ui.user_name
+            AND blog_delete = #{blogDelete}
+            <if test="blogTitle != null and blogTitle.length() > 0">
+                AND blog_title REGEXP #{blogTitle}
+            </if>
+            <if test="blogCategory != -1">
+                AND blog_category = #{blogCategory}
+            </if>
+        </where>
+        ORDER BY blog_date DESC LIMIT #{pageSize} OFFSET #{pageSize}*#{pageNo}
+    </select>
+
+    <select id="queryPerBlogById"  resultMap="blogArticlesMap">
+        SELECT A.*, B.user_nick_name FROM
+        (SELECT blog_id, blog_title, blog_date, blog_html_content, blog_md_content,
+        blog_label, blog_category, category_name, blog_summary, blog_read, blog_author
+        FROM blog_details, article_category
+        WHERE blog_category = category_id AND blog_id = #{blogId} AND blog_delete = 0 ) as A,
+        user_info as B WHERE A.blog_author = B.user_name
+    </select>
+
+
+</mapper>
