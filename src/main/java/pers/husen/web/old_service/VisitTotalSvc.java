@@ -1,4 +1,4 @@
-package pers.husen.web.service;
+package pers.husen.web.old_service;
 
 import pers.husen.web.old_dao.VisitTotalDao;
 import pers.husen.web.old_dao.impl.VisitTotalDaoImpl;

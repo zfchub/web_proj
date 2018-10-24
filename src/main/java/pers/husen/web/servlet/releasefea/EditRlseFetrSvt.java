@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +12,7 @@ import net.sf.json.JSONObject;
 import pers.husen.web.bean.vo.ReleaseFeatureVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.helper.TypeConvertHelper;
-import pers.husen.web.service.ReleaseFeatureSvc;
+import pers.husen.web.old_service.ReleaseFeatureSvc;
 
 /**
  * 上传新的版本特性

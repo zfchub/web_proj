@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.MessageAreaVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.helper.TypeConvertHelper;
-import pers.husen.web.service.MessageAreaSvc;
+import pers.husen.web.old_service.MessageAreaSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

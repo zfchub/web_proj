@@ -9,7 +9,7 @@ import pers.husen.web.bean.po.ImageUploadPo;
 import pers.husen.web.bean.vo.ImageUploadVo;
 import pers.husen.web.common.handler.ImageUploadHandler;
 import pers.husen.web.common.helper.DateFormatHelper;
-import pers.husen.web.service.ImageUploadSvc;
+import pers.husen.web.old_service.ImageUploadSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

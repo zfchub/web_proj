@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.UserInfoVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.helper.Md5EncryptHelper;
-import pers.husen.web.service.UserInfoSvc;
+import pers.husen.web.old_service.UserInfoSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;

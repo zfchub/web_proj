@@ -1,22 +1,11 @@
 package pers.husen.web.servlet.userinfo;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import pers.husen.web.bean.vo.UserInfoVo;
-import pers.husen.web.common.constants.RequestConstants;
-import pers.husen.web.common.helper.RandomCodeHelper;
-import pers.husen.web.common.helper.SendEmailHelper;
-import pers.husen.web.service.UserInfoSvc;
 
 /**
  * 用户信息操作, 带有验证码操作

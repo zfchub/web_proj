@@ -1,17 +1,11 @@
 package pers.husen.web.servlet.releasefea;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONObject;
-import pers.husen.web.bean.vo.ReleaseFeatureVo;
-import pers.husen.web.service.ReleaseFeatureSvc;
 
 /**
  * 查询最新的版本特性

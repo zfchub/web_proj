@@ -15,7 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import pers.husen.web.config.ProjectDeployConfig;
-import pers.husen.web.service.FileDownloadSvc;
+import pers.husen.web.old_service.FileDownloadSvc;
 
 /**
  * @author 何明胜

@@ -102,6 +102,23 @@ public class BlogArticleDaoImpl implements BlogArticleDao{
 		return DbQueryUtils.queryBeanListByParam(sql, paramList, BlogArticleVo.class).get(0);
 	}
 
+	public static void main(String[] args) {
+		String sql = "SELECT blog_id, blog_title, blog_date, "
+				+ BlogDetailsMapping.BLOG_HTML_CONTENT + ", "
+				+ BlogDetailsMapping.BLOG_MD_CONTENT + ", "
+				+ BlogDetailsMapping.BLOG_LABEL + ", "
+				+ BlogDetailsMapping.BLOG_CATEGOTY + ", "
+				+ ArticleCategoryMapping.CATEGORY_NAME + ", "
+				+ "blog_summary, blog_read, blog_author FROM blog_details, "
+				+ ArticleCategoryMapping.DB_NAME
+				+ " WHERE "
+				+ BlogDetailsMapping.BLOG_CATEGOTY + " = " + ArticleCategoryMapping.CATEGORY_ID
+				+ " AND blog_id = ? AND blog_delete = ? ";
+
+		sql = "SELECT A.*, B.user_nick_name FROM (" + sql + ") as A, user_info as B WHERE A.blog_author = B.user_name";
+		System.out.println(sql);
+	}
+
 	@Override
 	public int insertBlogArticle(BlogArticleVo bVo) {
 		String sql = "INSERT INTO blog_details (blog_title, blog_date, "

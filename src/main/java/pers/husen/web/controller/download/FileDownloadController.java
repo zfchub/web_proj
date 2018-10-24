@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.FileDownloadVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.handler.FileDownloadHandler;
-import pers.husen.web.service.FileDownloadSvc;
+import pers.husen.web.old_service.FileDownloadSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.ReleaseFeatureVo;
-import pers.husen.web.service.ReleaseFeatureSvc;
+import pers.husen.web.old_service.ReleaseFeatureSvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

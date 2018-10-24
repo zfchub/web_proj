@@ -1,17 +1,11 @@
 package pers.husen.web.servlet.download;
 
 import java.io.IOException;
-import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import pers.husen.web.bean.vo.FileDownloadVo;
-import pers.husen.web.common.handler.FileUploadHandler;
-import pers.husen.web.service.FileDownloadSvc;
 
 /**
  * 上传文件

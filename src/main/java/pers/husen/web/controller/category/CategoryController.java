@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.ArticleCategoryVo;
 import pers.husen.web.common.constants.RequestConstants;
-import pers.husen.web.service.ArticleCategorySvc;
+import pers.husen.web.old_service.ArticleCategorySvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

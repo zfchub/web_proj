@@ -11,7 +11,7 @@ import pers.husen.web.bean.vo.UserInfoVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.helper.RandomCodeHelper;
 import pers.husen.web.common.helper.SendEmailHelper;
-import pers.husen.web.service.UserInfoSvc;
+import pers.husen.web.old_service.UserInfoSvc;
 import pers.husen.web.servlet.userinfo.UserInfoCodeSvt;
 
 import javax.servlet.ServletException;

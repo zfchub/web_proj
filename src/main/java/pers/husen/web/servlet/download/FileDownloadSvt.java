@@ -1,21 +1,11 @@
 package pers.husen.web.servlet.download;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONArray;
-import org.springframework.web.bind.annotation.RequestParam;
-import pers.husen.web.bean.vo.FileDownloadVo;
-import pers.husen.web.common.constants.RequestConstants;
-import pers.husen.web.common.handler.FileDownloadHandler;
-import pers.husen.web.service.FileDownloadSvc;
 
 /**
  * 下载文件

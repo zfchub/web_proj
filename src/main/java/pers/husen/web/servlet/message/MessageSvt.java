@@ -1,21 +1,11 @@
 package pers.husen.web.servlet.message;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import pers.husen.web.bean.vo.MessageAreaVo;
-import pers.husen.web.common.constants.RequestConstants;
-import pers.husen.web.common.helper.TypeConvertHelper;
-import pers.husen.web.service.MessageAreaSvc;
 
 /**
  * 获取留言区留言

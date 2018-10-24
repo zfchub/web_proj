@@ -13,8 +13,8 @@ import pers.husen.web.dbutil.DbQueryUtils;
 import pers.husen.web.dbutil.mappingdb.ArticleCategoryMapping;
 import pers.husen.web.dbutil.mappingdb.BlogDetailsMapping;
 import pers.husen.web.dbutil.mappingdb.CodeLibraryMapping;
-import pers.husen.web.service.BlogArticleSvc;
-import pers.husen.web.service.CodeLibrarySvc;
+import pers.husen.web.old_service.BlogArticleSvc;
+import pers.husen.web.old_service.CodeLibrarySvc;
 
 /**
  * @desc 文章目录

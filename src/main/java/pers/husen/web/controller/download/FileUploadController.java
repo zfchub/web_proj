@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pers.husen.web.bean.vo.FileDownloadVo;
 import pers.husen.web.common.handler.FileUploadHandler;
-import pers.husen.web.service.FileDownloadSvc;
+import pers.husen.web.old_service.FileDownloadSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

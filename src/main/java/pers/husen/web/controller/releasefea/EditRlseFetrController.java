@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pers.husen.web.bean.vo.ReleaseFeatureVo;
 import pers.husen.web.common.constants.RequestConstants;
 import pers.husen.web.common.helper.TypeConvertHelper;
-import pers.husen.web.service.ReleaseFeatureSvc;
+import pers.husen.web.old_service.ReleaseFeatureSvc;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
