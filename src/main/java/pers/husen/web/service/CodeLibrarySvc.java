@@ -3,8 +3,8 @@ package pers.husen.web.service;
 import java.util.ArrayList;
 
 import pers.husen.web.bean.vo.CodeLibraryVo;
-import pers.husen.web.dao.CodeLibraryDao;
-import pers.husen.web.dao.impl.CodeLibraryDaoImpl;
+import pers.husen.web.old_dao.CodeLibraryDao;
+import pers.husen.web.old_dao.impl.CodeLibraryDaoImpl;
 
 /**
  * @author 何明胜

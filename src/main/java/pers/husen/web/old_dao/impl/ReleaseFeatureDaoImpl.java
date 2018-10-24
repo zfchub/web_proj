@@ -1,10 +1,10 @@
-package pers.husen.web.dao.impl;
+package pers.husen.web.old_dao.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import pers.husen.web.bean.vo.ReleaseFeatureVo;
-import pers.husen.web.dao.ReleaseFeatureDao;
+import pers.husen.web.old_dao.ReleaseFeatureDao;
 import pers.husen.web.dbutil.DbManipulationUtils;
 import pers.husen.web.dbutil.DbQueryUtils;
 import pers.husen.web.dbutil.mappingdb.ReleaseFeatureMapping;

@@ -1,7 +1,7 @@
 package pers.husen.web.service;
 
-import pers.husen.web.dao.VisitTotalDao;
-import pers.husen.web.dao.impl.VisitTotalDaoImpl;
+import pers.husen.web.old_dao.VisitTotalDao;
+import pers.husen.web.old_dao.impl.VisitTotalDaoImpl;
 
 /**
  * @author 何明胜

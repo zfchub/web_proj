@@ -1,8 +1,8 @@
 package pers.husen.web.service;
 
 import pers.husen.web.bean.vo.ReleaseFeatureVo;
-import pers.husen.web.dao.ReleaseFeatureDao;
-import pers.husen.web.dao.impl.ReleaseFeatureDaoImpl;
+import pers.husen.web.old_dao.ReleaseFeatureDao;
+import pers.husen.web.old_dao.impl.ReleaseFeatureDaoImpl;
 
 /**
  * @author 何明胜

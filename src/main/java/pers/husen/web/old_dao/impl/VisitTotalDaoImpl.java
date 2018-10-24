@@ -1,10 +1,10 @@
-package pers.husen.web.dao.impl;
+package pers.husen.web.old_dao.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import pers.husen.web.common.helper.DateFormatHelper;
-import pers.husen.web.dao.VisitTotalDao;
+import pers.husen.web.old_dao.VisitTotalDao;
 import pers.husen.web.dbutil.DbQueryUtils;
 import pers.husen.web.dbutil.DbManipulationUtils;
 

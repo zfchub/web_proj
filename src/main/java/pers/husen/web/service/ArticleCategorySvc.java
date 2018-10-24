@@ -3,8 +3,8 @@ package pers.husen.web.service;
 import java.util.ArrayList;
 
 import pers.husen.web.bean.vo.ArticleCategoryVo;
-import pers.husen.web.dao.ArticleCategoryDao;
-import pers.husen.web.dao.impl.ArticleCategoryDaoImpl;
+import pers.husen.web.old_dao.ArticleCategoryDao;
+import pers.husen.web.old_dao.impl.ArticleCategoryDaoImpl;
 
 /**
  * @desc 文章分类服务类

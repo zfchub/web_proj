@@ -3,8 +3,8 @@ package pers.husen.web.service;
 import java.util.ArrayList;
 
 import pers.husen.web.bean.vo.MessageAreaVo;
-import pers.husen.web.dao.MessageAreaDao;
-import pers.husen.web.dao.impl.MessageAreaDaoImpl;
+import pers.husen.web.old_dao.MessageAreaDao;
+import pers.husen.web.old_dao.impl.MessageAreaDaoImpl;
 
 /**
  * @author 何明胜

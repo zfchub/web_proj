@@ -1,10 +1,10 @@
-package pers.husen.web.dao.impl;
+package pers.husen.web.old_dao.impl;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 import pers.husen.web.bean.vo.ImageUploadVo;
-import pers.husen.web.dao.ImageUploadDao;
+import pers.husen.web.old_dao.ImageUploadDao;
 import pers.husen.web.dbutil.DbManipulationUtils;
 
 /**

@@ -3,8 +3,8 @@ package pers.husen.web.service;
 import java.util.ArrayList;
 
 import pers.husen.web.bean.vo.FileDownloadVo;
-import pers.husen.web.dao.FileDownloadDao;
-import pers.husen.web.dao.impl.FileDownloadDaoImpl;
+import pers.husen.web.old_dao.FileDownloadDao;
+import pers.husen.web.old_dao.impl.FileDownloadDaoImpl;
 
 /**
  * @author 何明胜

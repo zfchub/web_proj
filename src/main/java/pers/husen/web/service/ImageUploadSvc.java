@@ -1,8 +1,8 @@
 package pers.husen.web.service;
 
 import pers.husen.web.bean.vo.ImageUploadVo;
-import pers.husen.web.dao.ImageUploadDao;
-import pers.husen.web.dao.impl.ImageUploadDaoImpl;
+import pers.husen.web.old_dao.ImageUploadDao;
+import pers.husen.web.old_dao.impl.ImageUploadDaoImpl;
 
 /**
  * @author 何明胜

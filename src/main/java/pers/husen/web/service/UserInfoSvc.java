@@ -3,8 +3,8 @@ package pers.husen.web.service;
 import java.util.ArrayList;
 
 import pers.husen.web.bean.vo.UserInfoVo;
-import pers.husen.web.dao.UserInfoDao;
-import pers.husen.web.dao.impl.UserInfoDaoImpl;
+import pers.husen.web.old_dao.UserInfoDao;
+import pers.husen.web.old_dao.impl.UserInfoDaoImpl;
 
 
 /**
