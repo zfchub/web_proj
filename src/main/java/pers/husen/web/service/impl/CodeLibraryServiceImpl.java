@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class CodeLibraryServiceImpl implements CodeLibraryService{
 
-    @Autowired(required = false)
+    @Autowired
     private CodeLibraryMapper codeLibraryMapper;
 
     @Override
