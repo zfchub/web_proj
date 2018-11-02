@@ -1,15 +1,16 @@
-package pers.husen.web.unit;
+package pers.husen.web.unit.dao;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import pers.husen.web.bean.vo.ArticleCategoryVo;
 import pers.husen.web.dao.ArticleCategoryMapper;
+import pers.husen.web.unit.TestBase;
 
 import java.util.Date;
 import java.util.List;
 
-public class ArticleCategoryDaoTest extends TestBase{
+public class ArticleCategoryDaoTest extends TestBase {
 
     @Autowired(required = false)
     private ArticleCategoryMapper articleCategoryMapper;

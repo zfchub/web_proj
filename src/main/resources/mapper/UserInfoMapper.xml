@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pers.husen.web.dao.UserInfoMapper">
+
+
+    <insert id="addUserInfo">
+        INSERT INTO user_info
+        (user_name, user_nick_name, user_password, user_email, user_phone,
+        user_age, user_sex, user_address, user_head_url)
+        VALUES
+        (#{userInfoVo.userName}, #{userInfoVo.userNickName}, #{userInfoVo.userPassword}, #{userInfoVo.userEmail},
+        #{userInfoVo.userPhone}, #{userInfoVo.userAge}, #{userInfoVo.userSex}, #{userInfoVo.userAddress},
+        #{userInfoVo.userHeadUrl})
+    </insert>
+
+    <update id="updateUserInfo">
+        UPDATE user_info
+        <set>
+            <if test="userInfoVo.userName != null">
+                user_name = #{userInfoVo.userName},
+            </if>
+            <if test="userInfoVo.userNickName != null">
+                user_nick_nam = #{userInfoVo.userNickName},
+            </if>
+            <if test="userInfoVo.userPassword != null">
+                user_password = #{userInfoVo.userPassword},
+            </if>
+            <if test="userInfoVo.userEmail != null">
+                user_email = #{userInfoVo.userEmail},
+            </if>
+            <if test="userInfoVo.userPhone != null">
+                user_phone = #{userInfoVo.userPhone},
+            </if>
+            <if test="userInfoVo.userAge != null">
+                user_age = #{userInfoVo.userAge},
+            </if>
+            <if test="userInfoVo.userSex != null">
+                user_sex = #{userInfoVo.userSex},
+            </if>
+            <if test="userInfoVo.userAddress != null">
+                user_address = #{userInfoVo.userAddress},
+            </if>
+            <if test="userInfoVo.userHeadUrl != null">
+                user_head_url = #{userInfoVo.userHeadUrl},
+            </if>
+        </set>
+        WHERE user_id = #{userInfoVo.userId}
+    </update>
+
+    <delete id="deleteUserInfo">
+        DELETE FROM user_info WHERE user_id = #{userInfoVo.userId}
+    </delete>
+
+    <sql id="columns">
+       user_id, user_name, user_nick_name, user_password, user_email, user_phone,
+       user_age, user_sex, user_address, user_head_url
+    </sql>
+
+    <resultMap id="userInfoMap" type="pers.husen.web.bean.vo.UserInfoVo">
+        <id column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="user_nick_name" property="userNickName" jdbcType="VARCHAR" />
+        <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+        <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+        <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+        <result column="user_age" property="userAge" jdbcType="INTEGER" />
+        <result column="user_sex" property="userSex" jdbcType="INTEGER" />
+        <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+        <result column="user_head_url" property="userHeadUrl" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="listAll" resultMap="userInfoMap">
+        SELECT <include refid="columns" />
+        FROM user_info
+    </select>
+
+    <select id="getById" resultMap="userInfoMap">
+        SELECT <include refid="columns" />
+        FROM user_info
+        WHERE user_id = #{userId}
+    </select>
+
+
+</mapper>
